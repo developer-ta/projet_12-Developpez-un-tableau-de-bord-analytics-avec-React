@@ -1,0 +1,67 @@
+.barChart {
+  width: 835px;
+  height: 320px;
+}
+.tooltip-content {
+  display: flex;
+  width: 39px;
+  height: 63px;
+  background-color: #e60000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 7px;
+  color: #ffffff;
+}
+
+.recharts-legend-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0px 15px;
+
+  .recharts-default-legend {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0;
+    width: 277px;
+    height: 25px;
+  }
+  li {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+    .cercle-poids {
+      width: 8px;
+      height: 8px;
+      display: block;
+      background: #282d30;
+      margin: 0 8px;
+      border-radius: 50%;
+    }
+	.cercle-calorie{ width: 8px;
+		height: 8px;
+		display: block;
+		background: #E60000;
+		margin: 0 8px;
+		border-radius: 50%;}
+    span {
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+  }
+}
