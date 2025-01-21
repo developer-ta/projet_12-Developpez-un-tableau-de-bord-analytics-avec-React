@@ -21,7 +21,9 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   margin: 0px 15px;
-
+  p {
+    font-size: 15px;
+  }
   .recharts-default-legend {
     list-style: none;
     display: flex;
@@ -48,12 +50,14 @@
       margin: 0 8px;
       border-radius: 50%;
     }
-	.cercle-calorie{ width: 8px;
-		height: 8px;
-		display: block;
-		background: #E60000;
-		margin: 0 8px;
-		border-radius: 50%;}
+    .cercle-calorie {
+      width: 8px;
+      height: 8px;
+      display: block;
+      background: #e60000;
+      margin: 0 8px;
+      border-radius: 50%;
+    }
     span {
       font-family: Roboto;
       font-size: 14px;

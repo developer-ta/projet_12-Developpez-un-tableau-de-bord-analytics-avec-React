@@ -4,7 +4,7 @@ import styles from '../HomeBody.module.scss';
 export default function BarCharLegendContent() {
   return (
     <div className={styles["recharts-legend-wrap"]}>
-		<p className="">titre</p>
+		<p >Activité quotidienne</p>
       <ul className={styles["recharts-default-legend"]} style={{listStyle:"none"}}>
         <li className="recharts-legend-item">
           <span className={styles["cercle-poids"]}></span>
