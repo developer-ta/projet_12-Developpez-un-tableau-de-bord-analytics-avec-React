@@ -9,11 +9,11 @@ import {
   Legend,
   ResponsiveContainer,
   Label,
-} from 'recharts';
+} from "recharts";
 
-import styles from './HomeBody.module.scss';
-import { BarChartTooltipContent } from './contentChart/BarChartTooltipContent';
-import BarCharLegendContent from './contentChart/BarCharLegendContent';
+import styles from "./BarChartComponent.module.scss";
+import { BarChartTooltipContent } from "./content/BarChartTooltipContent";
+import BarCharLegendContent from "./content/BarCharLegendContent";
 
 const data = [
   {
@@ -61,15 +61,17 @@ const data = [
 ];
 export default function BarChartComponent() {
   return (
-    <div className={styles['barChart']}>
+    <div className={styles["barChart"]}>
       <h3>BarChartComponent</h3>
 
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+          className={styles["barChart-container"]}
           barCategoryGap="2%"
           barGap={11}
-          width={835}
+          width="100%"
           height={320}
+          maxBarSize={835}
           data={data}
           margin={{
             top: 5,
@@ -92,9 +94,9 @@ export default function BarChartComponent() {
 
           <YAxis orientation="right" axisLine={false} />
           <Tooltip
-            wrapperStyle={{ top: '-3%', left: '54px' }}
+            wrapperStyle={{ top: "-3%", left: "54px" }}
             content={<BarChartTooltipContent />}
-            cursor={{ fill: '#C4C4C480', fontSize: 5 }}
+            cursor={{ fill: "#C4C4C480", fontSize: 5 }}
           />
 
           <CartesianGrid vertical={false} strokeDasharray="3 3" />

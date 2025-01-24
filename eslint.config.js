@@ -23,7 +23,6 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'plugin':prettier/recommended,
-      
     },
     rules: {
       ...js.configs.recommended.rules,

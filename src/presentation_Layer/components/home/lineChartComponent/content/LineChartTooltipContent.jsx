@@ -1,9 +1,9 @@
-import styles from '../HomeBody.module.scss';
+import styles from '../BarChartComponent.module.scss';
 
 
 
 
-export  function BarChartTooltipContent({ active, payload }) {
+export  function LineChartTooltipContent({ active, payload }) {
   if (active || payload || payload.length == 1) {
     return (
 		

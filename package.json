@@ -7,9 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint All": "eslint .",
-    "lint": "eslint \"src/**/*/.(js.|jsx|tsx|ts)\" ",
+    "lint": "eslint \"src/**/*/.(js.|jsx|tsx|ts)\"",
     "preview vite": "vite preview",
-    "preview": "prettier --write \"src/**/*/.(js.|jsx|tsx|ts)\" "
+   "format": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|)\""
   },
   "dependencies": {
     "react": "^18.3.1",
