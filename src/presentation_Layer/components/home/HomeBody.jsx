@@ -1,6 +1,7 @@
 import LineChartComponent from "./lineChartComponent/LineChartComponent";
 import BarChartComponent from "./barChartComponent/BarChartComponent";
 import RadarChartComponent from './radarChartComponent/RadarChartComponent';
+import RadialBarChartComponent from "./radialBarChartComponent/RadialBarChartComponent.jsx";
 
 export default function HomeBody() {
   return (
@@ -8,7 +9,8 @@ export default function HomeBody() {
       {/* <h2>HomeBody</h2> */}
       {/* <BarChartComponent></BarChartComponent> */}
       {/* <LineChartComponent></LineChartComponent> */}
-      <RadarChartComponent></RadarChartComponent>
+      {/* <RadarChartComponent></RadarChartComponent> */}
+      <RadialBarChartComponent />
     </div>
   );
 }
