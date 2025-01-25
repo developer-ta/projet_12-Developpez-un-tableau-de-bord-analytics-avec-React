@@ -79,8 +79,8 @@ export default function RadialBarChartComponent() {
         /> */}
           <Legend
             iconSize={10}
-             layout="vertical"
-             verticalAlign="middle"
+            layout="vertical"
+            verticalAlign="middle"
             width={1}
             height={1}
             // chartWidth={100}
@@ -90,12 +90,21 @@ export default function RadialBarChartComponent() {
               const { payload } = props;
 
               return (
-                <ul style={{ listStyle: "none", padding:"0" }}>
+                <ul style={{ listStyle: "none", padding: "0" }}>
                   <li key={payload[0].id}>
                     <h1>12%</h1>
                   </li>
                   <li key={payload[0].id + 1}>
-                    <p>de votre objectif</p>
+                    <span
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "500",
+                        lineHeight: "26px",
+                        textAlign: "center",
+                      }}
+                    >
+                      de votre objectif
+                    </span>
                   </li>
                 </ul>
               );
