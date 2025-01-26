@@ -25,13 +25,15 @@
         flex-direction: row;
         justify-content: space-between;
       }
-
-     
     }
     #list-index-health {
       width: 27%;
       border: 1px black solid;
       height: 94.5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

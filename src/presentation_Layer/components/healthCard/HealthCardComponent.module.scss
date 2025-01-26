@@ -1,0 +1,19 @@
+#health-card {
+  display: flex;
+  width: 258px;
+  height: 124px;
+  background-color: #fbfbfb;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  .health-icon {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 5px;
+  }
+}
