@@ -1,83 +1,37 @@
-// .barChart {
-//   width: 835px;
-//   height: 320px;
+.dashboard-wrapper {
+  width: 89%;
+  border: red 1px solid;
+  height: 89%;
 
-//   .barChart-container {
-//   background: #fbfbfb;
-//   box-shadow: 0px 2px 4px 0px #00000005;
+  #dashboard-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 89%;
 
-//   border-radius: 5px;
-// }
-// }
-// .tooltip-content {
-//   display: flex;
-//   width: 39px;
-//   height: 63px;
-//   background-color: #e60000;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 7px;
-//   color: #ffffff;
-// }
+    #dashboard-graphiques {
+      width: 71%;
+      height: 100%;
+      max-width: 1126px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid aqua;
+      justify-content: space-around;
 
-// .recharts-legend-wrap {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: row;
-//   flex-wrap: nowrap;
-//   justify-content: space-between;
-//   margin: 0px 15px;
-//   p {
-//     font-size: 15px;
-//   }
-//   .recharts-default-legend {
-//     list-style: none;
-//     display: flex;
-//     justify-content: space-between;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     align-items: center;
-//     padding: 0;
-//     width: 277px;
-//     height: 25px;
-//   }
-//   li {
-//     display: flex;
+      #mini-graphiques {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
 
-//     align-items: center;
-//     justify-content: space-around;
-//     flex-direction: row;
-
-//     .cercle-poids {
-//       width: 8px;
-//       height: 8px;
-//       display: block;
-//       background: #282d30;
-//       margin: 0 8px;
-//       border-radius: 50%;
-//     }
-//     .cercle-calorie {
-//       width: 8px;
-//       height: 8px;
-//       display: block;
-//       background: #e60000;
-//       margin: 0 8px;
-//       border-radius: 50%;
-//     }
-//     span {
-//       font-family: Roboto;
-//       font-size: 14px;
-//       font-weight: 500;
-//       line-height: 24px;
-//       text-align: left;
-//       text-underline-position: from-font;
-//       text-decoration-skip-ink: none;
-//     }
-//   }
-// }
-
-
-
-
-
+     
+    }
+    #list-index-health {
+      width: 27%;
+      border: 1px black solid;
+      height: 94.5%;
+    }
+  }
+}

@@ -7,10 +7,13 @@ export default function MainLayout() {
   return (
     <div id="mainLayout">
       <Header />
-      <SideBar />
-      {/* component body hear ! */}
-      <Outlet />
-      <Footer />
+      <div className="content">
+        <SideBar />
+        {/* component body hear ! */}
+        <Outlet />
+      </div>
+
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -62,8 +62,6 @@ const data = [
 export default function BarChartComponent() {
   return (
     <div className={styles["barChart"]}>
-      <h3>BarChartComponent</h3>
-
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           className={styles["barChart-container"]}
