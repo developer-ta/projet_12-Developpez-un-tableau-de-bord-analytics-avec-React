@@ -1,7 +1,6 @@
 import styles from "./HealthCardComponent.module.scss";
 
 export default function HealthCardComponent({ IconBackgroundColor, srcIcon }) {
-  console.log("IconBackgroundColor: ", IconBackgroundColor);
   return (
     <div id={styles["health-card"]}>
       <div

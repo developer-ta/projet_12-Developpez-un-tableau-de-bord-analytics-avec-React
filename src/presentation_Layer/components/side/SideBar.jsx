@@ -9,8 +9,8 @@ export default function SideBar() {
   return (
     <nav id={styles["sideBar"]}>
       <ul className="NavLeft">
-        {listIconNavL.map(({ srcIcon }) => (
-          <li className="icon-Nav-l">
+        {listIconNavL.map(({ srcIcon },index) => (
+          <li key={index} className="icon-Nav-l">
             <img src={srcIcon} alt="icon-Nav-l" />
           </li>
         ))}
