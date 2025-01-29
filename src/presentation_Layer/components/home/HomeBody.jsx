@@ -4,28 +4,23 @@ import RadarChartComponent from "./radarChartComponent/RadarChartComponent";
 import RadialBarChartComponent from "./radialBarChartComponent/RadialBarChartComponent.jsx";
 import styles from "./HomeBody.module.scss";
 import DashboardHeader from "./dashboardHeader/DashboardHeader";
-import HealthCardComponent from "./../healthCard/HealthCardComponent";
-import { createContext, useState } from "react";
+
 import { useUserInfo } from "../../hooks/useUserInfo.jsx";
 import { UserContextProvider } from "../../store/context/UserContext.jsx";
 
-import { UserInfo } from "./../../../domain_Layer/User";
-const listHealth = [
-  { color: "#fbeaea", icon: "src/presentation_Layer/assets/energy.svg" },
-  { color: "#4AB8FF1A", icon: "src/presentation_Layer/assets/chicken.svg" },
-  { color: "#fbf6e5", icon: "src/presentation_Layer/assets/apple.svg" },
-  {
-    color: "#FD51811A",
-    icon: "src/presentation_Layer/assets/cheeseburger.svg",
-  },
-];
+import { HealthCardWrapComponent } from "../healthCard/HealthCardWrapComponent.jsx";
 
 export default function HomeBody() {
   const userId = 12;
-
   const { _newUser } = useUserInfo(userId);
-  console.log("_newUser: ", _newUser);
 
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g</h1>
+      </main>
+    );
+  }
   return (
     <UserContextProvider value={{ _newUser }}>
       <main id="main">
@@ -44,13 +39,7 @@ export default function HomeBody() {
 
             {/* {"section-2"} */}
             <section id={styles["list-index-health"]}>
-              {listHealth.map((l, index) => (
-                <HealthCardComponent
-                  key={index}
-                  IconBackgroundColor={l.color}
-                  srcIcon={l.icon}
-                />
-              ))}
+              <HealthCardWrapComponent />
             </section>
           </div>
         </div>

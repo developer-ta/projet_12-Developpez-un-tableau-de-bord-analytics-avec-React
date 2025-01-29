@@ -5,10 +5,11 @@ import { UserInfo } from "../../domain_Layer/User";
  * @param {UserInfo} NewUserInfo
  * @returns {Promise<UserInfo>}
  */
-export async function UserInfoService(userId, NewUserInfo, getUserById) {
+export async function UserInfoService(userId, getUserById) {
   const _userInfo = await getUserById(userId);
-  NewUserInfo.userInfoMapper?.(_userInfo);
-  return NewUserInfo;
+  return _userInfo;
+
+  // NewUserInfo.userInfoMapper?.(_userInfo);
 }
 // NewUserInfo.id = _userInfo.id;
 // NewUserInfo.age = _userInfo.userInfos.age;

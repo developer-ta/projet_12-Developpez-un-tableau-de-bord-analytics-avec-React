@@ -1,6 +1,11 @@
 import styles from "./HealthCardComponent.module.scss";
 
-export default function HealthCardComponent({ IconBackgroundColor, srcIcon }) {
+export default function HealthCardComponent({
+  IconBackgroundColor,
+  srcIcon,
+  healthIndex,
+  name
+}) {
   return (
     <div id={styles["health-card"]}>
       <div
@@ -10,8 +15,8 @@ export default function HealthCardComponent({ IconBackgroundColor, srcIcon }) {
         <img src={srcIcon} alt="logo" />
       </div>
       <div className="health-text-wrapper">
-        <h4>1,930kCal</h4>
-        <p>Calories</p>
+        <h4>{healthIndex}</h4>
+        <p>{name}</p>
       </div>
     </div>
   );

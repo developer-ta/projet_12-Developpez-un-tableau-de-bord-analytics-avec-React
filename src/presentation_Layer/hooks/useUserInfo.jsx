@@ -9,11 +9,16 @@ import { getUserById } from "../../infrastructure_Layer/fetchData";
  */
 
 export const useUserInfo = (id) => {
-  const [_newUser, setNewUser] = useState(new UserInfo());
+  const [_newUser, setNewUser] = useState(null);
+  const fetchData = useCallback(async () => {
+    const user = await UserInfoService(id, getUserById);
+    const newUser = new UserInfo();
+    newUser.userInfoMapper?.(user);
+    setNewUser(newUser);
+  });
 
   useEffect(() => {
-    const newUserPromise = UserInfoService(id, _newUser, getUserById);
-    newUserPromise.then((res) => setNewUser(res));
+    fetchData();
   }, [id]);
 
   return { _newUser };

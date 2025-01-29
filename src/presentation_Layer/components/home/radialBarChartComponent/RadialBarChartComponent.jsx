@@ -1,3 +1,4 @@
+import { useUserDataContext } from "../../../store/context/UserContext";
 import styles from "./RadialBarChartComponent.module.scss";
 
 import React from "react";
@@ -12,19 +13,23 @@ import {
 
 const data = [
   {
-    name: "18-24",
-    uv: 15,
+    // name: "18-24",
+    uv: 50,
 
     fill: "#ff0000",
   },
   {
-    name: "25-29",
-    uv: 40,
+    // name: "25-29",
+    uv: 100,
 
     fill: "#FFFFFF",
   },
 ];
 export default function RadialBarChartComponent() {
+  const { _newUser } = useUserDataContext();
+  const score = _newUser.todayScore * 100 || _newUser.score * 100;
+  data[0]["uv"] = score;
+  console.log("score: ", score);
   return (
     <div className={styles["radialChart-wrapper"]}>
       <ResponsiveContainer width="75%" height="75%">
@@ -92,7 +97,7 @@ export default function RadialBarChartComponent() {
               return (
                 <ul style={{ listStyle: "none", padding: "0" }}>
                   <li key={payload[0].id}>
-                    <h1>12%</h1>
+                    <h1>{`${score} %`}</h1>
                   </li>
                   <li key={payload[0].id + 1}>
                     <span
@@ -101,6 +106,9 @@ export default function RadialBarChartComponent() {
                         fontWeight: "500",
                         lineHeight: "26px",
                         textAlign: "center",
+                        display: "block",
+                        width: "98px",
+                        opacity: "60%",
                       }}
                     >
                       de votre objectif

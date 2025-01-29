@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-const UserAllDataContext = createContext(null);
+const UserAllDataContext = createContext();
 
 export const UserContextProvider = ({ value, children }) => {
   return (

@@ -13,6 +13,7 @@ export class UserInfo {
   }
 
   userInfoMapper({ data }) {
+    console.log('data: ', data);
     this.id = data.id;
     this.age = data.userInfos.age;
     this.calorieCount = data.keyData.calorieCount;

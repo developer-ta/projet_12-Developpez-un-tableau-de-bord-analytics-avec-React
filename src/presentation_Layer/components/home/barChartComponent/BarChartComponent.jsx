@@ -14,6 +14,7 @@ import {
 import styles from "./BarChartComponent.module.scss";
 import { BarChartTooltipContent } from "./content/BarChartTooltipContent";
 import BarCharLegendContent from "./content/BarCharLegendContent";
+import { useUserDataContext } from "../../../store/context/UserContext";
 
 const data = [
   {
@@ -60,6 +61,7 @@ const data = [
   },
 ];
 export default function BarChartComponent() {
+  const { _newUser } = useUserDataContext();
   return (
     <div className={styles["barChart"]}>
       <ResponsiveContainer width="100%" height="100%">
