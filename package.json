@@ -9,7 +9,7 @@
     "lint All": "eslint .",
     "lint": "eslint \"src/**/*/.(js.|jsx|tsx|ts)\"",
     "preview vite": "vite preview",
-   "format": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|)\""
+    "format": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|)\""
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -25,6 +25,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-jsdoc": "^50.6.3",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

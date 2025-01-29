@@ -10,8 +10,10 @@
   align-content: center;
   align-items: center;
   transform: rotateZ(0deg);
-  position: absolute;
+  position: static;
+
   left: 0;
+  bottom: 0;
 
   ul {
     list-style: none;

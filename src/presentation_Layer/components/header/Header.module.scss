@@ -11,7 +11,8 @@
   align-content: center;
   flex-direction: row;
   z-index: 1000;
-  position: static;
+  position: sticky;
+  top: 0px;
   nav {    width: 83%;
     ul {
       font-size: 24px;
