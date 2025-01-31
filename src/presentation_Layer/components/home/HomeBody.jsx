@@ -27,6 +27,7 @@ export default function HomeBody() {
         <div id={styles["dashboard-content"]}>
           {/* {"section-1"} */}
           <section id={styles["dashboard-graphiques"]}>
+             {/* activité */}
             <BarChartComponent userId={userId}></BarChartComponent>
             <div id={styles["mini-graphiques"]}>
               <LineChartComponent userId={userId}></LineChartComponent>

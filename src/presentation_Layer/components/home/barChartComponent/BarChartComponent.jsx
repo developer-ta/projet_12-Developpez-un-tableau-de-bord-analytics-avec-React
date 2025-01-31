@@ -16,6 +16,7 @@ import { BarChartTooltipContent } from "./content/BarChartTooltipContent";
 import BarCharLegendContent from "./content/BarCharLegendContent";
 import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
+
 const data = [
   {
     name: 1,
@@ -61,7 +62,17 @@ const data = [
   },
 ];
 export default function BarChartComponent({ userId }) {
-  // const {_newUser} = useUserGetData(userId, apiType.userInfo);
+  const { _newUser } = useUserGetData(userId, apiType.activity);
+
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+      </main>
+    );
+  }
+
+  console.log('_newUser.sessions: ', _newUser.sessions);
   return (
     <div className={styles["barChart"]}>
       <ResponsiveContainer width="100%" height="100%">

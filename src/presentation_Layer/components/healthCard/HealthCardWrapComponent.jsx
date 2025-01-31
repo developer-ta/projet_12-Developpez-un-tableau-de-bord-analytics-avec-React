@@ -8,9 +8,8 @@ import HealthCardComponent from "./HealthCardComponent";
  * @param {UserInfo} info
  */
 const HealthIndex = ({ info }) => {
-  console.log("info: ", info);
   const { lipidCount, proteinCount, carbohydrateCount, calorieCount } = info;
-  console.log("lipidCount: ", lipidCount);
+
   const listHealth = [
     {
       name: "Calories",

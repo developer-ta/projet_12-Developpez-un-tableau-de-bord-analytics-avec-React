@@ -1,4 +1,7 @@
+import { UserActivity } from "../../domain_Layer/user/UserActivity";
+import { UserAverageSessions } from "../../domain_Layer/user/UserAverageSessions";
 import { UserInfo } from "../../domain_Layer/user/UserInfo";
+import { UserPerformance } from "../../domain_Layer/user/UserPerformance";
 import { getUserInfo } from "../../infrastructure_Layer/fetchData";
 
 /**
@@ -13,15 +16,12 @@ export async function UserApiService(id, urlKeyAction) {
 
   if (!urlKeyAction) {
     componentData = new UserInfo();
-
   } else if (urlKeyAction == "activity") {
     urlUserHref += urlKeyAction;
     componentData = new UserActivity();
-
   } else if (urlKeyAction == "average-sessions") {
     urlUserHref += urlKeyAction;
     componentData = new UserAverageSessions();
-
   } else if (urlKeyAction == "performance") {
     componentData = new UserPerformance();
   }
