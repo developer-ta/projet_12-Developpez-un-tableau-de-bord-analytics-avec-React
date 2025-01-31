@@ -29,7 +29,7 @@ export default function BarChartComponent({ userId }) {
     );
   }
 
-
+  console.log("_newUser.sessions.calories: ", _newUser);
 
   return (
     <div className={styles["barChart"]}>
