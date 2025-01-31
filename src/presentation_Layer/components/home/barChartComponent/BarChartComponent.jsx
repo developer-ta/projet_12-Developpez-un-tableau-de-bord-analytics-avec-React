@@ -19,7 +19,7 @@ import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
 const data = [
   {
-    name: 1,
+    name: 1,//day
     uv: 4000,
     pv: 2400,
     amt: 2400,
@@ -72,7 +72,7 @@ export default function BarChartComponent({ userId }) {
     );
   }
 
-  console.log('_newUser.sessions: ', _newUser.sessions);
+  console.log('_newUser.sessions: ', _newUser);
   return (
     <div className={styles["barChart"]}>
       <ResponsiveContainer width="100%" height="100%">
@@ -83,7 +83,7 @@ export default function BarChartComponent({ userId }) {
           width="100%"
           height={320}
           maxBarSize={835}
-          data={data}
+          data={data}//
           margin={{
             top: 5,
             right: 30,
@@ -92,7 +92,7 @@ export default function BarChartComponent({ userId }) {
           }}
         >
           <XAxis
-            dataKey="name"
+            dataKey="name"//day
             stroke="#9B9EAC"
             fontSize={10}
             tickLine={false}
@@ -114,14 +114,14 @@ export default function BarChartComponent({ userId }) {
 
           <Legend verticalAlign="top" content={<BarCharLegendContent />} />
           <Bar
-            dataKey="pv"
+            dataKey="pv"//poids
             fill="#282D30"
             barSize={7}
             radius={[3, 3, 0, 0]}
             activeBar={<Rectangle fill="#282D30" />}
           />
           <Bar
-            dataKey="uv"
+            dataKey="uv"//calories
             fill="#E60000"
             radius={[3, 3, 0, 0]}
             barSize={7}

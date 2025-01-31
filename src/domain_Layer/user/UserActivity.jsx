@@ -18,7 +18,8 @@ export class UserActivity {
   }
 
   userMapper({ data }) {
-    this.id = data.id;
+    this.id = data.userId;
+   
     this.sessions = this.dayAdapter(data.sessions);
   }
 }
