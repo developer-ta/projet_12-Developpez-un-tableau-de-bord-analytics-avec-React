@@ -23,13 +23,17 @@ export async function UserApiService(id, urlKeyAction) {
     urlUserHref += urlKeyAction;
     componentData = new UserAverageSessions();
   } else if (urlKeyAction == "performance") {
+    urlUserHref += urlKeyAction;
+    
     componentData = new UserPerformance();
   }
-
+  
   _userInfo = await getUserInfo(urlUserHref);
   
+  
   componentData.userMapper(_userInfo);
-
+  
+  
   return componentData;
 }
 

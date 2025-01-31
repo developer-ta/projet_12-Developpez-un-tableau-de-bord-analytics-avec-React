@@ -7,10 +7,10 @@ import DashboardHeader from "./dashboardHeader/DashboardHeader";
 
 
 import { HealthCardWrapComponent } from "../healthCard/HealthCardWrapComponent.jsx";
-import { useState } from "react";
+
 
 export default function HomeBody() {
-  const userId = 12;
+  const userId = 18;
   // const { _newUser } = useUserInfo(userId);
 
   // if (!_newUser) {

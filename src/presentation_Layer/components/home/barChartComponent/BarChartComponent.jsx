@@ -17,50 +17,7 @@ import BarCharLegendContent from "./content/BarCharLegendContent";
 import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
 
-const data = [
-  {
-    name: 1,//day
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 2,
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 3,
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 4,
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 5,
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 6,
-    uv: 2390,
-    pv: 3800,
-    amt: 25,
-  },
-  {
-    name: 7,
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+
 export default function BarChartComponent({ userId }) {
   const { _newUser } = useUserGetData(userId, apiType.activity);
 
@@ -72,7 +29,8 @@ export default function BarChartComponent({ userId }) {
     );
   }
 
-  console.log('_newUser.sessions: ', _newUser);
+
+
   return (
     <div className={styles["barChart"]}>
       <ResponsiveContainer width="100%" height="100%">
@@ -83,7 +41,7 @@ export default function BarChartComponent({ userId }) {
           width="100%"
           height={320}
           maxBarSize={835}
-          data={data}//
+          data={_newUser.sessions} //_newUser.sessions
           margin={{
             top: 5,
             right: 30,
@@ -92,7 +50,7 @@ export default function BarChartComponent({ userId }) {
           }}
         >
           <XAxis
-            dataKey="name"//day
+            dataKey="day" //day
             stroke="#9B9EAC"
             fontSize={10}
             tickLine={false}
@@ -114,14 +72,14 @@ export default function BarChartComponent({ userId }) {
 
           <Legend verticalAlign="top" content={<BarCharLegendContent />} />
           <Bar
-            dataKey="pv"//poids
+            dataKey="kilogram" //poids
             fill="#282D30"
             barSize={7}
             radius={[3, 3, 0, 0]}
             activeBar={<Rectangle fill="#282D30" />}
           />
           <Bar
-            dataKey="uv"//calories
+            dataKey="calories" //calories
             fill="#E60000"
             radius={[3, 3, 0, 0]}
             barSize={7}

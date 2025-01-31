@@ -11,47 +11,58 @@ import {
 } from "recharts";
 import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
-const data = [
-  {
-    subject: "Math",
-    A: 120,
-    B: 110,
-    fullMark: 150,
-  },
-  {
-    subject: "Chinese",
-    A: 98,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "English",
-    A: 86,
-    B: 130,
-    fullMark: 150,
-  },
-  {
-    subject: "Geography",
-    A: 99,
-    B: 100,
-    fullMark: 150,
-  },
-  {
-    subject: "Physics",
-    A: 85,
-    B: 90,
-    fullMark: 150,
-  },
-  {
-    subject: "History",
-    A: 65,
-    B: 85,
-    fullMark: 150,
-  },
-];
+// const data = [
+//   {
+//     subject: "Math",
+//     A: 120,
+//     B: 110,
+//     fullMark: 150,
+//   },
+//   {
+//     subject: "Chinese",
+//     A: 98,
+//     B: 130,
+//     fullMark: 150,
+//   },
+//   {
+//     subject: "English",
+//     A: 86,
+//     B: 130,
+//     fullMark: 150,
+//   },
+//   {
+//     subject: "Geography",
+//     A: 99,
+//     B: 100,
+//     fullMark: 150,
+//   },
+//   {
+//     subject: "Physics",
+//     A: 85,
+//     B: 90,
+//     fullMark: 150,
+//   },
+//   {
+//     subject: "History",
+//     A: 65,
+//     B: 85,
+//     fullMark: 150,
+//   },
+// ];
 
 export default function RadarChartComponent({ userId }) {
-  // const { _newUser } = useUserGetData(userId, apiType.userInfo);
+  const { _newUser } = useUserGetData(userId, apiType.performance);
+
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+      </main>
+    );
+  }
+
+  console.log("_newUser: ", _newUser);
+
   return (
     <RadarChart
       className={styles["radar-wrapper"]}
@@ -61,7 +72,7 @@ export default function RadarChartComponent({ userId }) {
       // outerRadius={150}
       width={258}
       height={263}
-      data={data}
+      data={_newUser.data}
       margin={{
         top: 5,
         right: 30,
@@ -72,7 +83,7 @@ export default function RadarChartComponent({ userId }) {
     >
       <PolarGrid stroke="#FFFFFF" strokeWidth={1} /> {/* 设置网格线的颜色 */}
       <PolarAngleAxis
-        dataKey="subject"
+        dataKey="kind"//kind
         stroke="#FFFFFF"
         axisLine={false}
         angleAxis={false}
@@ -100,7 +111,7 @@ export default function RadarChartComponent({ userId }) {
       /> */}
       <Radar
         name="Mike"
-        dataKey="B"
+        dataKey="value"//value
         stroke="blue"
         fill="red"
         fillOpacity={0.6}
