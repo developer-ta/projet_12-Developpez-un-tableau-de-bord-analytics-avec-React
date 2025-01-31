@@ -1,23 +1,63 @@
-import { UserInfo } from "../../domain_Layer/User";
+import { UserInfo } from "../../domain_Layer/user/UserInfo";
+import { getUserInfo } from "../../infrastructure_Layer/fetchData";
 
 /**
  * @param {number} userId
  * @param {UserInfo} NewUserInfo
  * @returns {Promise<UserInfo>}
  */
-export async function UserInfoService(userId, getUserById) {
-  const _userInfo = await getUserById(userId);
-  return _userInfo;
+export async function UserApiService(id, urlKeyAction) {
+  let urlUserHref = `http://localhost:3000/user/${id}/`;
+  let componentData = null;
+  let _userInfo = null;
 
-  // NewUserInfo.userInfoMapper?.(_userInfo);
+  if (!urlKeyAction) {
+    componentData = new UserInfo();
+
+  } else if (urlKeyAction == "activity") {
+    urlUserHref += urlKeyAction;
+    componentData = new UserActivity();
+
+  } else if (urlKeyAction == "average-sessions") {
+    urlUserHref += urlKeyAction;
+    componentData = new UserAverageSessions();
+
+  } else if (urlKeyAction == "performance") {
+    componentData = new UserPerformance();
+  }
+
+  _userInfo = await getUserInfo(urlUserHref);
+  componentData.userMapper(_userInfo);
+
+  return componentData;
 }
-// NewUserInfo.id = _userInfo.id;
-// NewUserInfo.age = _userInfo.userInfos.age;
-// NewUserInfo.calorieCount = _userInfo.keyData.calorieCount;
-// NewUserInfo.carbohydrateCount = _userInfo.keyData.carbohydrateCount;
-// NewUserInfo.lipidCount = _userInfo.keyData.lipidCount;
-// NewUserInfo.proteinCount = _userInfo.keyData.proteinCount;
-// NewUserInfo.todayScore = _userInfo.todayScore;
-// NewUserInfo.score = _userInfo.score;
-// NewUserInfo.firstName = _userInfo.userInfos.firstName;
-// NewUserInfo.lastName = _userInfo.userInfos.lastName;
+
+// function userApiReducer(state, { type }) {
+//   const [urlKeyAction, id] = type;
+
+//   const getData = (data) => (state = data);
+
+//   switch (urlKeyAction) {
+//     case undefined:
+//       componentData = new UserInfo();
+//       UserApiService(urlUserHref, componentData, getData);
+//       return state;
+//     case "activity":
+//       urlUserHref += urlKeyAction;
+//       componentData = new UserActivity();
+//       UserApiService(urlUserHref, getData);
+//       return componentData.userMapper(state);
+//     case "average-sessions":
+//       urlUserHref += urlKeyAction;
+//       componentData = new UserAverageSessions();
+//       UserApiService(urlUserHref, getData);
+//       return componentData.userMapper(state);
+//     case "performance":
+//       componentData = new UserPerformance();
+//       UserApiService(urlUserHref, getData);
+//       return componentData.userMapper(state);
+
+//     default:
+//       throw new Error("erreur 404 ");
+//   }
+// }

@@ -1,4 +1,3 @@
-import { useUserDataContext } from "../../../store/context/UserContext";
 import styles from "./RadialBarChartComponent.module.scss";
 
 import React from "react";
@@ -10,6 +9,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
 const data = [
   {
@@ -25,11 +25,20 @@ const data = [
     fill: "#FFFFFF",
   },
 ];
-export default function RadialBarChartComponent() {
-  const { _newUser } = useUserDataContext();
+export default function RadialBarChartComponent({ userId }) {
+  const { _newUser } = useUserGetData(userId, apiType.userInfo);
+
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+      </main>
+    );
+  }
+
   const score = _newUser.todayScore * 100 || _newUser.score * 100;
   data[0]["uv"] = score;
-  console.log("score: ", score);
+
   return (
     <div className={styles["radialChart-wrapper"]}>
       <ResponsiveContainer width="75%" height="75%">

@@ -62,7 +62,7 @@ const data = [
   },
 ];
 
-export default function LineChartComponent() {
+export default function LineChartComponent({userId}) {
   return (
     <div className={styles["lineChart"]}>
       <ResponsiveContainer width="100%" height="100%">

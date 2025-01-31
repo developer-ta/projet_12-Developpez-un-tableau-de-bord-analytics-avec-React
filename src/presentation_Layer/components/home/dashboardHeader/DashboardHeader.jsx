@@ -1,12 +1,19 @@
 import styles from "./DashboardHeader.module.scss";
-import { useUserDataContext } from "../../../store/context/UserContext";
-import { UserInfo } from "../../../../domain_Layer/User";
+import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
-export default function DashboardHeader() {
+export default function DashboardHeader({ userId }) {
   /**
    *@type{UserInfo}_newUser
    */
-  const { _newUser } = useUserDataContext();
+  const { _newUser } = useUserGetData(userId, apiType.userInfo);
+
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+      </main>
+    );
+  }
 
   return (
     <div id={styles["dashboard-Header"]}>

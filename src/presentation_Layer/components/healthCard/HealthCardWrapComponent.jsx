@@ -1,5 +1,6 @@
-import { UserInfo } from "../../../domain_Layer/User";
-import { useUserDataContext } from "../../store/context/UserContext";
+import { UserInfo } from "../../../domain_Layer/user/UserInfo";
+import { apiType, useUserGetData } from "../../hooks/useUserGetData";
+
 import HealthCardComponent from "./HealthCardComponent";
 
 /**
@@ -48,9 +49,16 @@ const HealthIndex = ({ info }) => {
   ));
 };
 
-export const HealthCardWrapComponent = () => {
-  const { _newUser } = useUserDataContext();
+export const HealthCardWrapComponent = ({ userId }) => {
+  const { _newUser } = useUserGetData(userId, apiType.userInfo);
 
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+      </main>
+    );
+  }
   return (
     <>
       <HealthIndex info={_newUser} />

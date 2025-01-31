@@ -9,6 +9,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import { apiType, useUserGetData } from "../../../hooks/useUserGetData";
 
 const data = [
   {
@@ -49,7 +50,8 @@ const data = [
   },
 ];
 
-export default function RadarChartComponent() {
+export default function RadarChartComponent({ userId }) {
+  // const { _newUser } = useUserGetData(userId, apiType.userInfo);
   return (
     <RadarChart
       className={styles["radar-wrapper"]}
@@ -69,7 +71,12 @@ export default function RadarChartComponent() {
       // style={{ backgroundColor: "#111" }}
     >
       <PolarGrid stroke="#FFFFFF" strokeWidth={1} /> {/* 设置网格线的颜色 */}
-      <PolarAngleAxis dataKey="subject" stroke="#FFFFFF" axisLine={false} angleAxis={false}  />
+      <PolarAngleAxis
+        dataKey="subject"
+        stroke="#FFFFFF"
+        axisLine={false}
+        angleAxis={false}
+      />
       <PolarRadiusAxis axisLine={false} tick={false} />
       {/* <PolarGrid stroke="red" />
       <PolarAngleAxis dataKey="subject" />
