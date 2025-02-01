@@ -16,6 +16,8 @@ import {
   ReferenceLine,
   ReferenceArea,
 } from "recharts";
+import { apiType } from "../../../hooks/useUserGetData";
+import { useUserGetData } from './../../../hooks/useUserGetData';
 
 const data = [
   {
@@ -62,7 +64,18 @@ const data = [
   },
 ];
 
-export default function LineChartComponent({userId}) {
+export default function LineChartComponent({ userId }) {
+  const { _newUser } = useUserGetData(userId, apiType.averageSessions);
+
+  if (!_newUser) {
+    return (
+      <main id="main">
+        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+      </main>
+    );
+  }
+
+  console.log("apiType.averageSessions: ", _newUser.sessions);
   return (
     <div className={styles["lineChart"]}>
       <ResponsiveContainer width="100%" height="100%">

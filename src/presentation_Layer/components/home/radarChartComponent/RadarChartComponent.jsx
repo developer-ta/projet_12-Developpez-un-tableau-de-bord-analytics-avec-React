@@ -67,9 +67,9 @@ export default function RadarChartComponent({ userId }) {
     <RadarChart
       className={styles["radar-wrapper"]}
       // outerRadius="20%"
-      // cx={258}
+      //cx={258}
       // cy={0}
-      // outerRadius={150}
+       //outerRadius={150}
       width={258}
       height={263}
       data={_newUser.data}
