@@ -26,7 +26,7 @@ const data = [
   },
 ];
 export default function RadialBarChartComponent({ userId }) {
-  const { _newUser } = useUserGetData(userId, apiType.averageSessions);
+  const { _newUser } = useUserGetData(userId, apiType.userInfo);
 
   if (!_newUser) {
     return (

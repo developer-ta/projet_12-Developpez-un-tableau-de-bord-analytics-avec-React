@@ -7,21 +7,17 @@ import {
   LineChart,
   Line,
   XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
-  LabelList,
-  ReferenceLine,
-  ReferenceArea,
+  Area,
 } from "recharts";
 import { apiType } from "../../../hooks/useUserGetData";
-import { useUserGetData } from './../../../hooks/useUserGetData';
+import { useUserGetData } from "./../../../hooks/useUserGetData";
 
 const data = [
   {
-    name: "Page A",
+    name: "Page A", //day
     uv: 4000,
     pv: 2400,
     amt: 2400,
@@ -70,33 +66,45 @@ export default function LineChartComponent({ userId }) {
   if (!_newUser) {
     return (
       <main id="main">
-        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+        <h1 style={{ color: "red" }}> ... L o a d i n g </h1>
       </main>
     );
   }
 
   console.log("apiType.averageSessions: ", _newUser.sessions);
+//  _newUser.sessions.pop("L")
   return (
     <div className={styles["lineChart"]}>
       <ResponsiveContainer width="100%" height="100%">
         <span className={styles["back"]}></span>
         <LineChart
           className={styles["line-container"]}
-          data={data}
+          data={_newUser.sessions}
           margin={{ top: 0 }}
+          
         >
+             {/* Définition des dégradés */}  
+      <defs>  
+        <linearGradient id="gradientColor" x1="10%" y1="0%" x2="0%" y2="0%">  
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.1} />  
+          <stop offset="50%" stopColor="#FFFFFF" stopOpacity={0} />  
+        </linearGradient>  
+      </defs> 
           <XAxis
             fill="white"
-            dataKey="name"
-            padding={{ top: 0, bottom: 0, right: 0, left: 0 }}
+            dataKey="day"
+            padding={{ top: 0, bottom: 0, right: 22, left: 22 }}
             tickLine={false}
             axisLine={false}
             tickMargin={0}
-          />
+           
+            stroke="#FFFFFF"
 
+          />
+{/* <Area type="monotone" dataKey="day" stroke="#00ccff" fill="#00ccff" />  */}
           <Line
             type="monotone"
-            dataKey="pv"
+            dataKey="sessionLength"
             stroke="#FFFFFF"
             activeDot={{
               r: 8,
@@ -109,8 +117,13 @@ export default function LineChartComponent({ userId }) {
           />
           <Tooltip
             cursor={false}
-            content={() => {
-              return <p style={{ backgroundColor: "white" }}>68 min</p>;
+            content={({ active, payload }) => {
+              if (active || (payload && payload.length == 1)) {
+                const [v1] = payload;
+                return (
+                  <p style={{ backgroundColor: "white" }}>{v1.value} min</p>
+                );
+              }
             }}
           ></Tooltip>
           <Legend verticalAlign="top" content={<LineCharLegendContent />} />

@@ -31,7 +31,7 @@
  * @returns {Promise<object>}
  */
 export async function getUserInfo(urlHref) {
-  // const urlHref = urlBase.concat("user/" + id);
+ 
   const data = await fetchGetData(urlHref);
 
   return data;
@@ -48,23 +48,3 @@ async function fetchGetData(urlString) {
   }
 }
 
-// export async function getUserActivity(id) {
-//   const urlHref = urlBase.concat("user/" + id + "activity");
-//   const data = await fetchGetData(urlHref);
-
-//   return data;
-// }
-
-// export async function getUserAverageSessions(id) {
-//   const urlHref = urlBase.concat("user/" + id + "average-sessions");
-//   const data = await fetchGetData(urlHref);
-
-//   return data;
-// }
-
-// export async function getUserPerformance(id) {
-//   const urlHref = urlBase.concat("user/" + id + "performance");
-//   const data = await fetchGetData(urlHref);
-
-//   return data;
-// }

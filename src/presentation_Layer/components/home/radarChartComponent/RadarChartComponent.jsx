@@ -61,7 +61,7 @@ export default function RadarChartComponent({ userId }) {
     );
   }
 
-  console.log("_newUser: ", _newUser);
+
 
   return (
     <RadarChart
