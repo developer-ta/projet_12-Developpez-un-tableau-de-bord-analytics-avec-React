@@ -7,19 +7,14 @@ import DashboardHeader from "./dashboardHeader/DashboardHeader";
 
 
 import { HealthCardWrapComponent } from "../healthCard/HealthCardWrapComponent.jsx";
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function HomeBody() {
-  const userId = 18;
-  // const { _newUser } = useUserInfo(userId);
+  let userId;
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  !state ? navigate("/user") : (userId = state.userId);
 
-  // if (!_newUser) {
-  //   return (
-  //     <main id="main">
-  //       <h1 style={{ color: "red" }}>... L o a d i n g </h1>
-  //     </main>
-  //   );
-  // }
   return (
     <main id="main">
       <div className={styles["dashboard-wrapper"]}>
@@ -27,12 +22,12 @@ export default function HomeBody() {
         <div id={styles["dashboard-content"]}>
           {/* {"section-1"} */}
           <section id={styles["dashboard-graphiques"]}>
-             {/* activité */}
+            {/* activité */}
             <BarChartComponent userId={userId}></BarChartComponent>
             <div id={styles["mini-graphiques"]}>
               <LineChartComponent userId={userId}></LineChartComponent>
               <RadarChartComponent userId={userId}></RadarChartComponent>
-              <RadialBarChartComponent userId={userId}/>
+              <RadialBarChartComponent userId={userId} />
             </div>
           </section>
 

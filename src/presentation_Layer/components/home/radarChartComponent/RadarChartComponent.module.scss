@@ -8,8 +8,12 @@
 
 @media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
   .radar-wrapper {
-    width: 32%;
-    height: auto;
+
+    font-size: 6px;
+    font-weight: 400;
+    line {
+      display: none;
+    }
   }
   .recharts-responsive-container {
     width: 32%;

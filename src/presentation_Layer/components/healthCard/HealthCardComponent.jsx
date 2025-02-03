@@ -6,7 +6,7 @@ export default function HealthCardComponent({
   healthIndex,
   name
 }) {
-  console.log("healthIndex: ", name);
+
   return (
     <div id={styles["health-card"]}>
       <div

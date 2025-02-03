@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 
-
 export default function Header() {
-	return (
+  return (
     <header id={styles["header"]}>
       <img
         src="src/presentation_Layer/assets/logo-SportSee.svg"
@@ -10,7 +10,9 @@ export default function Header() {
       ></img>
       <nav className="nav-top">
         <ul className="nav-top-list">
-          <li>Accueil</li>
+          <Link to={"/user"}>
+            <li>Accueil</li>
+          </Link>
           <li>Profil</li>
           <li>Réglage</li>
           <li>Communauté</li>
@@ -18,4 +20,4 @@ export default function Header() {
       </nav>
     </header>
   );
-  }
+}

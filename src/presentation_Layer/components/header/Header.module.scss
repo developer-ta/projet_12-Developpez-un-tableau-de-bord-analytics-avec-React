@@ -26,16 +26,33 @@
       justify-content: space-around;
       align-items: center;
       align-content: center;
+      a {
+        color: white;
+        text-decoration: unset;
+        &:hover {
+          color: rgb(233, 222, 18);
+          text-decoration: underline;
+          scale: 110%;
+        }
+      }
     }
   }
 }
 @media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
   #header {
-    img{    height: 46px;}
-    justify-content: space-around;    height: 65px;
+    img {
+      height: 46px;
+    }
+    justify-content: space-around;
+    height: 65px;
     nav {
       width: 77%;
-      ul {font-size: 21px;
+      ul {
+        font-size: 21px;
+        a {
+          color: white;
+          text-decoration: unset;
+        }
       }
     }
   }

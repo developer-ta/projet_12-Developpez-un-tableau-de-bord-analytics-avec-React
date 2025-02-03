@@ -17,9 +17,9 @@ export default function DashboardHeader({ userId }) {
 
   return (
     <div id={styles["dashboard-Header"]}>
-      <h2>
+      <h3>
         Bonjour <span style={{ color: "#E60000" }}>{_newUser.firstName}</span>
-      </h2>
+      </h3>
       <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
   );

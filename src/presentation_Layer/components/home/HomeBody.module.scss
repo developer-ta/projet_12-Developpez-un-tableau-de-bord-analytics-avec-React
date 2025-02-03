@@ -44,8 +44,11 @@
   
     #dashboard-content {
       justify-content: space-between;
+      justify-content: space-between;
       width: 95%;
       height: 89%;
+      position: relative;
+      top: -20px;
   
       #dashboard-graphiques {
      

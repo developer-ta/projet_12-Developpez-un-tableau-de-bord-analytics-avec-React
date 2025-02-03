@@ -35,21 +35,21 @@ export default function RadialBarChartComponent({ userId }) {
       </main>
     );
   }
-
+  
   const score = _newUser.todayScore * 100 || _newUser.score * 100;
+ 
   data[0]["uv"] = score;
-
   return (
     <div className={styles["radialChart-wrapper"]}>
-      <ResponsiveContainer width="75%" height="75%">
+      <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           className={styles["radialChart-container"]}
           barSize={10}
           // width="100%"
           // height="100%"
           cx="50%"
-          cy="50%"
-          innerRadius="100%"
+          cy="53%"
+          innerRadius="105%"
           outerRadius="80%"
           // strokeWidth={1}
           // stroke="#ccc"
@@ -95,8 +95,8 @@ export default function RadialBarChartComponent({ userId }) {
             iconSize={10}
             layout="vertical"
             verticalAlign="middle"
-            width={1}
-            height={1}
+            width={0.1}
+            height={0.1}
             // chartWidth={100}
             // chartHeight={100}
             align="center"
@@ -106,7 +106,7 @@ export default function RadialBarChartComponent({ userId }) {
               return (
                 <ul style={{ listStyle: "none", padding: "0" }}>
                   <li key={payload[0].id}>
-                    <h1>{`${score} %`}</h1>
+                    <h3 style={{marginBottom:"0"}}>{`${score}%`}</h3>
                   </li>
                   <li key={payload[0].id + 1}>
                     <span
