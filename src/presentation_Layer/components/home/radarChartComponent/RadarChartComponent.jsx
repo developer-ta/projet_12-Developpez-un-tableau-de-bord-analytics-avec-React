@@ -67,23 +67,24 @@ export default function RadarChartComponent({ userId }) {
     <RadarChart
       className={styles["radar-wrapper"]}
       // outerRadius="20%"
-      //cx={258}
-      // cy={0}
+      // cx={100}
+      // cy={100}
        //outerRadius={150}
-      width={258}
-      height={263}
+
+      width={170}
+      height={170}
       data={_newUser.data}
       margin={{
         top: 5,
-        right: 30,
-        left: 20,
+        right: 10,
+        left: 10,
         bottom: 5,
       }}
       // style={{ backgroundColor: "#111" }}
     >
       <PolarGrid stroke="#FFFFFF" strokeWidth={1} /> {/* 设置网格线的颜色 */}
       <PolarAngleAxis
-        dataKey="kind"//kind
+        dataKey="kind" //kind
         stroke="#FFFFFF"
         axisLine={false}
         angleAxis={false}
@@ -111,7 +112,7 @@ export default function RadarChartComponent({ userId }) {
       /> */}
       <Radar
         name="Mike"
-        dataKey="value"//value
+        dataKey="value" //value
         stroke="blue"
         fill="red"
         fillOpacity={0.6}

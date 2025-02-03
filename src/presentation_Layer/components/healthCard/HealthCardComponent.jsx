@@ -6,6 +6,7 @@ export default function HealthCardComponent({
   healthIndex,
   name
 }) {
+  console.log("healthIndex: ", name);
   return (
     <div id={styles["health-card"]}>
       <div
@@ -15,7 +16,10 @@ export default function HealthCardComponent({
         <img src={srcIcon} alt="logo" />
       </div>
       <div className="health-text-wrapper">
-        <h4>{healthIndex}</h4>
+        <h4>
+          {healthIndex}
+          {name =="Calories" ? "KCal" : "g"}
+        </h4>
         <p>{name}</p>
       </div>
     </div>

@@ -75,7 +75,7 @@ export default function LineChartComponent({ userId }) {
 //  _newUser.sessions.pop("L")
   return (
     <div className={styles["lineChart"]}>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="98%">
         <span className={styles["back"]}></span>
         <LineChart
           className={styles["line-container"]}
@@ -83,13 +83,13 @@ export default function LineChartComponent({ userId }) {
           margin={{ top: 0 }}
           
         >
-             {/* Définition des dégradés */}  
+             {/* Définition des dégradés  
       <defs>  
         <linearGradient id="gradientColor" x1="10%" y1="0%" x2="0%" y2="0%">  
           <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.1} />  
           <stop offset="50%" stopColor="#FFFFFF" stopOpacity={0} />  
         </linearGradient>  
-      </defs> 
+      </defs>  */}
           <XAxis
             fill="white"
             dataKey="day"

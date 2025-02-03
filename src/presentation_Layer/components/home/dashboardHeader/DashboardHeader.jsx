@@ -17,10 +17,10 @@ export default function DashboardHeader({ userId }) {
 
   return (
     <div id={styles["dashboard-Header"]}>
-      <h1>
+      <h2>
         Bonjour <span style={{ color: "#E60000" }}>{_newUser.firstName}</span>
-      </h1>
-      <h3>Félicitation ! Vous avez explosé vos objectifs hier 👏</h3>
+      </h2>
+      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
   );
 }

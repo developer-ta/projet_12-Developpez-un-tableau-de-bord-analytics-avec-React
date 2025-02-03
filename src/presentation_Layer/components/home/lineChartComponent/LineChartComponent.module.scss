@@ -38,6 +38,24 @@
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
+  .lineChart {
+    width: 32%;
+    height: auto;
+    
+    .recharts-legend-wrapper {
+ 
+    }
+  
+    .back {
+   
+    }
+    .line-container {
+    
+    }
+  }
+}
+
 // .tooltip-content {
 //   display: flex;
 //   width: 39px;

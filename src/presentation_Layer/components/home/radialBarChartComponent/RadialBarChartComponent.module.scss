@@ -35,3 +35,21 @@
     }
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
+  .radialChart-wrapper {
+    width: 32%;
+    height: auto;
+    .radialChart-container {
+
+  
+      path:nth-last-child(1) {
+       
+      }
+  
+      div[class="recharts-legend-wrapper"] {
+ 
+      }
+    }
+  }
+}

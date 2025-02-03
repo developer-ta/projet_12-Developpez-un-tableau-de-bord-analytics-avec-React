@@ -33,18 +33,19 @@ export default function BarChartComponent({ userId }) {
 
   return (
     <div className={styles["barChart"]}>
-      <ResponsiveContainer width="100%" height="100%">
+
         <BarChart
           className={styles["barChart-container"]}
           barCategoryGap="2%"
           barGap={11}
-          width="100%"
-          height={320}
-          maxBarSize={835}
+          width={559}
+          height={200}
+          
+          maxBarSize={900}
           data={_newUser.sessions} //_newUser.sessions
           margin={{
             top: 5,
-            right: 30,
+            right: 50,
             left: 20,
             bottom: 5,
           }}
@@ -56,14 +57,15 @@ export default function BarChartComponent({ userId }) {
             tickLine={false}
             axisLine={true}
             interval={0}
+            
             tickFormatter={(Value) => {
               return Value;
             }}
           />
 
-          <YAxis orientation="right" axisLine={false} />
+          <YAxis orientation="right" axisLine={false} tickLine={false} width={3}/>
           <Tooltip
-            wrapperStyle={{ top: "-3%", left: "54px" }}
+            wrapperStyle={{ top: "-3%", left: "69px" }}
             content={<BarChartTooltipContent />}
             cursor={{ fill: "#C4C4C480", fontSize: 5 }}
           />
@@ -86,7 +88,7 @@ export default function BarChartComponent({ userId }) {
             activeBar={<Rectangle fill="#E60000" />}
           />
         </BarChart>
-      </ResponsiveContainer>
+      
     </div>
   );
 }

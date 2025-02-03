@@ -1,5 +1,5 @@
 #header {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2509803922);
   background-color: #020203;
   height: 91px;
   width: 100%;
@@ -13,7 +13,8 @@
   z-index: 1000;
   position: sticky;
   top: 0px;
-  nav {    width: 83%;
+  nav {
+    width: 83%;
     ul {
       font-size: 24px;
       font-weight: 500;
@@ -25,6 +26,17 @@
       justify-content: space-around;
       align-items: center;
       align-content: center;
+    }
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
+  #header {
+    img{    height: 46px;}
+    justify-content: space-around;    height: 65px;
+    nav {
+      width: 77%;
+      ul {font-size: 21px;
+      }
     }
   }
 }

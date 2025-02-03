@@ -1,114 +1,19 @@
 .radar-wrapper {
-  background: #282D30;
-  box-shadow: 0px 2px 4px 0px #00000005;    font-size: 12px;
+  background: #282d30;
+  box-shadow: 0px 2px 4px 0px #00000005;
+  font-size: 12px;
   font-weight: 500;
   border-radius: 5px;
 }
 
-
-// .lineChart {
-//   width: 258px;
-//   height: 263px;
-//   position: relative;
-//   .recharts-legend-wrapper {
-//     width: 148px;
-//     height: 57px;
-//     text-align: start;
-//     color: #ffffff;
-//     font-size: 15px;
-//     position: relative;
-//     font-weight: 500;
-//     position: relative;
-//     left: 11%;
-//    opacity: 50.4%;
-//   }
-
-//   .back {
-//     width: 79px;
-//     background: rgba(0, 0, 0, 0.1);
-//     // height: 300px;
-//     position: absolute;
-//     /* top: 103%; */
-//     z-index: 1000;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//   }
-//   .line-container {
-//     background: rgba(255, 0, 0, 1);
-//     // background:linear-gradient(180deg,rgba(255, 0, 0, 1),rgba(0, 0, 0, 1));
-//     border: 2px solid;
-
-//     box-shadow: 0px 2px 4px 0px #00000005;
-
-//     border-radius: 5px;
-//   }
-// }
-
-// .tooltip-content {
-//   display: flex;
-//   width: 39px;
-//   height: 63px;
-//   background-color: #e60000;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 7px;
-//   color: #ffffff;
-// }
-
-// .recharts-legend-wrap {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: row;
-//   flex-wrap: nowrap;
-//   justify-content: space-between;
-//   margin: 0px 15px;
-//   p {
-//     font-size: 15px;
-//   }
-//   .recharts-default-legend {
-//     list-style: none;
-//     display: flex;
-//     justify-content: space-between;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     align-items: center;
-//     padding: 0;
-//     width: 277px;
-//     height: 25px;
-//   }
-//   li {
-//     display: flex;
-
-//     align-items: center;
-//     justify-content: space-around;
-//     flex-direction: row;
-
-//     .cercle-poids {
-//       width: 8px;
-//       height: 8px;
-//       display: block;
-//       background: #282d30;
-//       margin: 0 8px;
-//       border-radius: 50%;
-//     }
-//     .cercle-calorie {
-//       width: 8px;
-//       height: 8px;
-//       display: block;
-//       background: #e60000;
-//       margin: 0 8px;
-//       border-radius: 50%;
-//     }
-//     span {
-//       font-family: Roboto;
-//       font-size: 14px;
-//       font-weight: 500;
-//       line-height: 24px;
-//       text-align: left;
-//       text-underline-position: from-font;
-//       text-decoration-skip-ink: none;
-//     }
-//   }
-// }
+@media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
+  .radar-wrapper {
+    width: 32%;
+    height: auto;
+  }
+  .recharts-responsive-container {
+    width: 32%;
+    height: 100%;
+    min-width: 0px;
+  }
+}
