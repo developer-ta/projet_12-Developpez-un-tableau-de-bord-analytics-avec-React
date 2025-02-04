@@ -13,17 +13,19 @@ export class UserInfo {
 	}
   
 	userMapper({ data }) {
-	  
-	  this.id = data.id;
-	  this.age = data.userInfos.age;
-	  this.calorieCount = data.keyData.calorieCount;
-	  this.carbohydrateCount = data.keyData.carbohydrateCount;
-	  this.lipidCount = data.keyData.lipidCount;
-	  this.proteinCount = data.keyData.proteinCount;
-	  this.todayScore = data.todayScore;
-	  this.score = data.score;
-	  this.firstName = data.userInfos.firstName;
-	  this.lastName = data.userInfos.lastName;
+	  if (data) {
+      this.id = data.id;
+      this.age = data.userInfos.age;
+      this.calorieCount = data.keyData.calorieCount;
+      this.carbohydrateCount = data.keyData.carbohydrateCount;
+      this.lipidCount = data.keyData.lipidCount;
+      this.proteinCount = data.keyData.proteinCount;
+      this.todayScore = data.todayScore;
+      this.score = data.score;
+      this.firstName = data.userInfos.firstName;
+      this.lastName = data.userInfos.lastName;
+    }
+	
   
 	
 	}

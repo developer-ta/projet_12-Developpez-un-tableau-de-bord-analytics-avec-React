@@ -30,10 +30,10 @@ export async function UserApiService(id, urlKeyAction) {
   
   _userInfo = await getUserInfo(urlUserHref);
   
-  
-  componentData.userMapper(_userInfo);
-  
-  
+  if (_userInfo) {
+    componentData.userMapper(_userInfo);
+  }
+ 
   return componentData;
 }
 

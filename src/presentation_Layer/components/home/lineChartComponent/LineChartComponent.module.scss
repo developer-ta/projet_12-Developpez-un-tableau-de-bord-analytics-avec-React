@@ -36,19 +36,25 @@
 
     border-radius: 5px;
   }
+  p {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
 }
 
 @media (min-width: 1024px) and (max-width: 1200px) and (min-height: 768px) {
   .lineChart {
-    width: 170px;
-    height: 170px;
+    width: 195px;
+    height: 195px;
     
     .recharts-legend-wrapper {
- 
+      width: 142px;
+      height: 46px;
     }
   
     .back {
-   
+      width: 32%;
     }
     .line-container {
     

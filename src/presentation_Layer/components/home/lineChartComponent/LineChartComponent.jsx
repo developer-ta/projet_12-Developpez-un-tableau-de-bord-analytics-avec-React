@@ -75,7 +75,7 @@ export default function LineChartComponent({ userId }) {
 //  _newUser.sessions.pop("L")
   return (
     <div className={styles["lineChart"]}>
-      <ResponsiveContainer width="100%" height="98%">
+      <ResponsiveContainer width="100%" height="100%">
         <span className={styles["back"]}></span>
         <LineChart
           className={styles["line-container"]}
@@ -93,7 +93,7 @@ export default function LineChartComponent({ userId }) {
           <XAxis
             fill="white"
             dataKey="day"
-            padding={{ top: 0, bottom: 0, right: 22, left: 22 }}
+            padding={{ top: 0, bottom: 0, right: 0, left: 0  }}
             tickLine={false}
             axisLine={false}
             tickMargin={0}

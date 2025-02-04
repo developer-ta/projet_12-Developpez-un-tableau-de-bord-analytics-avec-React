@@ -48,9 +48,9 @@ export default function RadialBarChartComponent({ userId }) {
           // width="100%"
           // height="100%"
           cx="50%"
-          cy="53%"
-          innerRadius="105%"
-          outerRadius="80%"
+          cy="50%"
+          innerRadius="104%"
+          outerRadius="30%"
           // strokeWidth={1}
           // stroke="#ccc"
           // radius={[3, 3, 5, 5]}

@@ -41,9 +41,12 @@
   #sideBar {
     height: auto;
     width: 7%;
+    justify-content: space-around;
 
     ul {
       margin-top: 67px;
+      position: relative;
+      top: -32px;
       li {
         margin-bottom: 10px;
         img {
@@ -52,7 +55,7 @@
       }
     }
     p {
-      font-size: 7px;
+      font-size: 12px;
     }
   }
 }

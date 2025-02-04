@@ -38,8 +38,8 @@ export default function BarChartComponent({ userId }) {
           className={styles["barChart-container"]}
           barCategoryGap="2%"
           barGap={11}
-          width={559}
-          height={200}
+          width={616}
+          height={320}
           
           maxBarSize={900}
           data={_newUser.sessions} //_newUser.sessions
