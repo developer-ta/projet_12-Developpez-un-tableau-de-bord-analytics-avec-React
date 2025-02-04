@@ -8,8 +8,8 @@ export const routes = createBrowserRouter([
     path: "/",
     element: <Home />,
     children: [
-      { index: true, element: <HomeBody /> },
-      { path: "user", element: <User /> },
+      { index: true, element: <User /> },
+      { path: "user", element: <HomeBody /> },
     ],
   },
 ]);

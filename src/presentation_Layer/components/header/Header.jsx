@@ -10,7 +10,7 @@ export default function Header() {
       ></img>
       <nav className="nav-top">
         <ul className="nav-top-list">
-          <Link to={"/user"}>
+          <Link to={"/"}>
             <li>Accueil</li>
           </Link>
           <li>Profil</li>
