@@ -1,6 +1,6 @@
 .dashboard-wrapper {
   width: 89%;
-  border: red 1px solid;
+  // border: red 1px solid;
   height: 89%;
 
   #dashboard-content {
@@ -17,7 +17,7 @@
       max-width: 1126px;
       display: flex;
       flex-direction: column;
-      border: 1px solid aqua;
+      // border: 1px solid aqua;
       justify-content: space-around;
 
       #mini-graphiques {
@@ -28,7 +28,7 @@
     }
     #list-index-health {
       width: 27%;
-      border: 1px black solid;
+      // border: 1px black solid;
       height: 94.5%;
       display: flex;
       flex-direction: column;
