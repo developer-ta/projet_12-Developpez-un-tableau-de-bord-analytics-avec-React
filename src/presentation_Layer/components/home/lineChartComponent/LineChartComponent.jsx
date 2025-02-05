@@ -78,10 +78,11 @@ export default function LineChartComponent({ userId }) {
       <ResponsiveContainer width="100%" height="100%">
         <span className={styles["back"]}></span>
         <LineChart
+       
           className={styles["line-container"]}
           data={_newUser.sessions}
           margin={{ top: 0 }}
-          
+          cx={10}
         >
              {/* Définition des dégradés  
       <defs>  
@@ -93,11 +94,11 @@ export default function LineChartComponent({ userId }) {
           <XAxis
             fill="white"
             dataKey="day"
-            padding={{ top: 0, bottom: 0, right: 0, left: 0  }}
+            padding={{ top: 0, bottom: 0, right: 15, left: 15  }}
             tickLine={false}
             axisLine={false}
             tickMargin={0}
-           
+          
             stroke="#FFFFFF"
 
           />
