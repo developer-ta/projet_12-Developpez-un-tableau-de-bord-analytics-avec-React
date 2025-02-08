@@ -24,12 +24,12 @@ export default function BarChartComponent({ userId }) {
   if (!_newUser) {
     return (
       <main id="main">
-        <h1 style={{ color: "red" }}>... L o a d i n g </h1>
+        <h1 style={{ color: "red" }}>L o a d i n g... </h1>
       </main>
     );
   }
 
-  console.log("_newUser.sessions.calories: ", _newUser);
+
 
   return (
     <div className={styles["barChart"]}>
@@ -52,7 +52,8 @@ export default function BarChartComponent({ userId }) {
         >
           <XAxis
             dataKey="day" //day
-            stroke="#9B9EAC"
+             stroke="#9B9EAC"
+         
             fontSize={10}
             tickLine={false}
             axisLine={true}

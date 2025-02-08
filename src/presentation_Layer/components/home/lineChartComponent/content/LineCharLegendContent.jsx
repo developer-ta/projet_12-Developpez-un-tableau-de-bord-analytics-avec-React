@@ -3,7 +3,7 @@ import styles from "../LineChartComponent.module.scss";
 export default function LineCharLegendContent() {
   return (
     <div className={styles["recharts-legend-wrapper"]}>
-      <p className={styles["legend"]}>Durée moyenne des sessions</p>
+      <span className={styles["legend"]}>Durée moyenne des sessions</span>
     </div>
   );
 }

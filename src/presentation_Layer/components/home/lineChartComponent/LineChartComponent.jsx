@@ -77,6 +77,7 @@ export default function LineChartComponent({ userId }) {
     <div className={styles["lineChart"]}>
       <ResponsiveContainer width="100%" height="100%">
         <span className={styles["back"]}></span>
+        <span className={styles["back-1"]}></span> 
         <LineChart
        
           className={styles["line-container"]}
@@ -99,14 +100,14 @@ export default function LineChartComponent({ userId }) {
             axisLine={false}
             tickMargin={0}
           
-            stroke="#FFFFFF"
+            stroke="#ff8484"
 
           />
 {/* <Area type="monotone" dataKey="day" stroke="#00ccff" fill="#00ccff" />  */}
           <Line
             type="monotone"
             dataKey="sessionLength"
-            stroke="#FFFFFF"
+            stroke="#fbd3d3"
             activeDot={{
               r: 8,
               fill: "#FFFFFF",
